@@ -1,16 +1,15 @@
 import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { View , Text, StyleSheet} from "react-native";
 
-export default function Index() {
-  return (
-    <View
-      style={style.view}
-    >
-      <Text>Home Page Hai</Text>
-      {/* <Link style={style.button} href={"/login"}>Loginpage</Link> */}
-    </View>
-  );
+export default function Loginpage(){
+    return(
+        <View>
+            <Text>login page</Text>
+            <Link style={style.button} href={"/(tabs)/profile"}>Loginpage</Link>
+        </View>
+    )
 }
+
 
 const style= StyleSheet.create({
   view:{
