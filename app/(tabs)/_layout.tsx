@@ -1,20 +1,50 @@
 import {  Tabs } from "expo-router";
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 export default function RootLayout() {
   return (
-    <Tabs screenOptions={{tabBarActiveTintColor:'Blue'}}>
+    <Tabs screenOptions={{
+     headerStyle:{backgroundColor:"#f5f5f5"}, 
+     headerShadowVisible:false,
+     tabBarStyle:{
+      backgroundColor:"#f5f5f5",
+      borderTopWidth:0,
+      elevation:0,
+      shadowOpacity:0,
 
-      <Tabs.Screen  name="index" options={{title:"Home",tabBarIcon:({color})=>(
-        <FontAwesome name="home" size={24} color={color} />
-  )}} />
+    },
+    tabBarActiveTintColor:"#6200ee",
+     
+    }}>
 
-      <Tabs.Screen  name="profile" options={{title:"Profile", tabBarIcon:({color})=>(
-        <FontAwesome6 name="user-large" size={20} color={color} />
-
-      )}} />
-
-
+      <Tabs.Screen  
+       name="index"
+       options={{
+        title:"Today's Habits",
+        tabBarIcon:({color, size, focused})=>(
+          <MaterialCommunityIcons name="calendar-today"  size={size} color={color}/>
+        
+        )
+       }} />
+       <Tabs.Screen  
+       name="streaks"
+       options={{
+        title:"Streaks",
+        tabBarIcon:({color, size, focused})=>(
+          <MaterialCommunityIcons name="chart-line"  size={size} color={color}/>
+        
+        )
+       }} />
+       <Tabs.Screen  
+       name="add-habit"
+       options={{
+        title:"Add Habit",
+        tabBarIcon:({color, size, focused})=>(
+          <MaterialCommunityIcons name="plus-circle"  size={size} color={color}/>
+        
+        )
+       }} />
+       
 
     </Tabs>
   );

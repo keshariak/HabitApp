@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
 
-export default function Profilepage(){
+export default function StreakPage(){
     return(
         <View>
             <Text>
-                this is profile page...
+                Straks
 
             </Text>
         </View>
