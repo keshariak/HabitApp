@@ -41,7 +41,11 @@ export default function AddhabitPage() {
           created_at: new Date().toISOString(),
         }
       );
+      setTitle("");
+      setDescription("");
+      
       router.back();
+      
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
